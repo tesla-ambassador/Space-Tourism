@@ -50,14 +50,50 @@ a {
 }
 
 .homeBg {
-  background: url('../assets/home/background-home-mobile.jpg');
+  background: url('../public/assets/home/background-home-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.destBg {
+  background: url('../public/assets/destination/background-destination-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.crewBg {
+  background: url('../public/assets/crew/background-crew-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.techBg {
+  background: url('../public/assets/technology/background-technology-mobile.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 @media (min-width: 640px) {
   .homeBg {
-    background: url('../assets/home/background-home-tablet.jpg');
+    background: url('../public/assets/home/background-home-tablet.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .destBg {
+    background: url('../public/assets/destination/background-destination-tablet.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .crewBg {
+    background: url('../public/assets/crew/background-crew-tablet.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .techBg {
+    background: url('../public/assets/technology/background-technology-tablet.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -65,7 +101,25 @@ a {
 
 @media (min-width: 1000px) {
   .homeBg {
-    background: url('../assets/home/background-home-desktop.jpg');
+    background: url('../public/assets/home/background-home-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .destBg {
+    background: url('../public/assets/destination/background-destination-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .crewBg {
+    background: url('../public/assets/crew/background-crew-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .techBg {
+    background: url('../public/assets/technology/background-technology-desktop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }

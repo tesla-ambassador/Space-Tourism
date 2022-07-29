@@ -1,11 +1,14 @@
 import '../styles/globals.css'
-import Layout from '../components/Mobile Menu/Layout'
+import Layout from '../components/Layout'
+import GlobalProvider from '../context/GlobalState';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <GlobalProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </GlobalProvider>
   );
 }
 

@@ -23,13 +23,17 @@ module.exports = {
         h1mob: "80px",
         h2: "100px",
         h3: "56px",
+        h3dsk: "50px",
+        h3tab: "40px",
+        h3mob: "24px",
         h4: "32px",
         h5: "28px",
         h5tab: "20px",
         sh1: "28px",
         sh2: "14px",
         nav: "16px",
-        bod: "16px"
+        bod: "16px",
+        boddsk: "18px"
       },
       fontFamily: {
         bel: ['Bellefair', 'serif'],
@@ -43,7 +47,16 @@ module.exports = {
       },
       width: {
         mid: "450px",
+        sem: "600px",
+        lag: "800px",
         sml: "330px"
+      },
+      height: {
+        lrge: "700px",
+        midd: "500px"
+      },
+      borderWidth: {
+        thin: '.5px'
       }
     },
   },
