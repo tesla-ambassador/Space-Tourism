@@ -4,6 +4,7 @@ import { GlobalContext } from '../context/GlobalState'
 import Dots from '../components/Crew/Dots';
 import Image from 'next/image';
 import Text from '../components/Text';
+import { motion } from 'framer-motion';
 
 export default function Crew() {
     const {crewData} = useContext(GlobalContext);
@@ -13,6 +14,7 @@ export default function Crew() {
         role: crewData[0].role,
         bioData: crewData[0].bio
     })
+    const [pos, setNewPos] = useState(0)
 
     function updateDisplay(id) {
         setNewData({
@@ -21,12 +23,22 @@ export default function Crew() {
             role: crewData[id].role,
             bioData: crewData[id].bio
         })
-        console.log('I am functional')
+        setNewPos(id)
     }
 
   return (
-    <div className='crewBg h-fit dsk:h-screen overflow-scroll flex items-center justify-center dsk:overflow-hidden xdsk:h-screen xdsk:overflow-scroll xdsk:px-24'>
-        <div className=' mt-24 py-12 flex flex-col items-center w-full gap-5 tab:px-10 dsk:tab:px-20 xdsk:px-0'>
+    <motion.div 
+    className='h-fit crewBg dsk:h-screen flex items-center justify-center xdsk:px-24 dsk:items-end'
+    initial={{x: '-100vw'}}
+    animate={{x: '0'}}
+    transition={
+      {
+        duration: .5
+      }
+    }
+    exit={{x: '100vw'}}
+    >
+        <div className=' mt-24 py-12 dsk:py-4 flex flex-col items-center w-full gap-5 tab:px-10 dsk:px-20 xdsk:px-0'>
             <div className='tab:self-start'>
                 <PageTitle 
                     number='02'
@@ -42,13 +54,14 @@ export default function Crew() {
                         width={500}
                     />
                 </div>
-                <div className='flex flex-col tab:flex-col-reverse items-center gap-3 dsk:items-start dsk:gap-20 dsk:self-end'>
+                <div className='flex flex-col tab:flex-col-reverse items-center gap-3 dsk:items-start dsk:gap-10 dsk:self-end'>
                     <div className='flex gap-4'>
                         {crewData.map((data, index) => {
                             return <Dots 
                                 key={index}
                                 onClick={updateDisplay}
                                 id={index}
+                                className={index === pos ? 'bg-light w-3 h-3 rounded-full cursor-pointer' : 'bg-navDark w-3 h-3 rounded-full cursor-pointer hover:bg-midDark'}
                             />
                         })}
                     </div>
@@ -62,6 +75,6 @@ export default function Crew() {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
