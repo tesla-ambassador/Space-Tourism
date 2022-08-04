@@ -4,17 +4,7 @@ import { motion} from 'framer-motion'
 
 export default function Home() {
   return (
-    <motion.div 
-    className='h-screen homeBg flex justify-center items-center dsk:items-end'
-    initial={{x: '-100vw'}}
-    animate={{x: '0'}}
-    transition={
-      {
-        duration: .5
-      }
-    }
-    exit={{x: '100vw'}}
-    >
+    <div className='h-screen homeBg flex justify-center items-center dsk:items-end'>
       <div className=' flex flex-col justify-center items-center gap-20 
       text-white mt-20 tab:justify-end tab:mt-32 tab:gap-14
       dsk:flex-row dsk:w-full dsk:px-24 dsk:py-24 xdsk:px-48 dsk:justify-between'>
@@ -29,6 +19,6 @@ export default function Home() {
           <Button />
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

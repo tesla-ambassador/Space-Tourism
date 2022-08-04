@@ -16,7 +16,8 @@ export const GlobalContext = createContext(initialState);
 // Provider Component
 export default function GlobalProvider({children}) {
 
-  const [state, dispatch] = useReducer(AppReducer, initialState)
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+
   return (
     <GlobalContext.Provider value={{destinationData: state.destinationData,
     crewData: state.crewData, techData: state.techData}}>

@@ -32,17 +32,7 @@ function updateDisplay(id) {
 }
 
   return (
-    <motion.div 
-    className='destBg h-fit overflow-scroll flex items-center justify-center dsk:overflow-hidden xdsk:h-screen xdsk:overflow-hidden'
-    initial={{x: '-100vw'}}
-    animate={{x: '0'}}
-    transition={
-      {
-        duration: .5
-      }
-    }
-    exit={{x: '100vw'}}
-    >
+    <div className='destBg h-fit overflow-scroll flex items-center justify-center dsk:overflow-hidden xdsk:h-screen xdsk:overflow-hidden'>
       <div className='mt-24 text-center px-5 flex flex-col items-center gap-3 py-5 tab:py-12 tab:w-full tab:px-10 dsk:flex-row dsk:items-start xdsk:mt-32'>
         <div className='flex flex-col items-center gap-5 w-full dsk:mt-5 dsk:gap-10'>
           <PageTitle 
@@ -104,6 +94,6 @@ function updateDisplay(id) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
