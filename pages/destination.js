@@ -1,11 +1,11 @@
 import React, {useContext, useState} from 'react'
 import { GlobalContext } from '../context/GlobalState'
-import Image from 'next/image';
 import MainText from '../components/MainText';
 import Tabs from '../components/Destination/Tabs';
 import Stats from '../components/Destination/Stats';
 import PageTitle from '../components/PageTitle';
 import { motion } from 'framer-motion';
+import {Image, Shimmer } from 'react-shimmer';
 
 const destArray = ['MOON', 'MARS', 'EUROPA', 'TITAN'];
 
@@ -44,9 +44,8 @@ function updateDisplay(id) {
           >
             <Image
               src={destinationData[data].images.png}
+              fallback={<Shimmer width={500} height={500} />}
               alt='destination'
-              height={500}
-              width={500}
             />
           </motion.div>
         </motion.div>

@@ -19,7 +19,7 @@ export default function Layout({children}) {
         animate={{opacity: 1}}
         transition={{
             duration: 1,
-            delay: .9
+            delay: .7
         }}
         >
           <Nav onToggle={() => {

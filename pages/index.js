@@ -13,7 +13,7 @@ export default function Home() {
           initial={{opacity: 0, x: '-100vw'}}
           animate={{opacity: 1, x: '0vw'}}
           transition={{
-              delay: 0.8,
+              delay: 0.3,
               duration: 1,
           }}
           className='text-midDark font-bar text-bod tracking-navspace tab:h5-tab tab:tracking-h5space'
@@ -22,7 +22,7 @@ export default function Home() {
           initial={{opacity: 0, x: '-100vw'}}
           animate={{opacity: 1, x: '0vw'}}
           transition={{
-              delay: 1.2,
+              delay: 0.5,
               duration: 1,
           }}
           >
@@ -36,7 +36,7 @@ export default function Home() {
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         transition={{
-            delay: 1.5,
+            delay: 0.7,
             duration: 1,
         }}
         >
