@@ -11,24 +11,10 @@ const destArray = ['MOON', 'MARS', 'EUROPA', 'TITAN'];
 
 export default function Destination() {
 const {destinationData} = useContext(GlobalContext);
-const [data, setNewData] = useState({
-  imgUrl: destinationData[0].images.png,
-  dataTitle: destinationData[0].name,
-  dataContent: destinationData[0].description,
-  destDistance: destinationData[0].distance,
-  travelTime: destinationData[0].travel
-})
-const [pos, setNewPos] = useState(0)
+const [data, setNewData] = useState(0)
 
 function updateDisplay(id) {
-  setNewData({
-    imgUrl: destinationData[id].images.png,
-    dataTitle: destinationData[id].name,
-    dataContent: destinationData[id].description,
-    destDistance: destinationData[id].distance,
-    travelTime: destinationData[id].travel
-  })
-  setNewPos(id)
+  setNewData(id)
 }
 
   return (
@@ -57,7 +43,7 @@ function updateDisplay(id) {
           }}
           >
             <Image
-              src={data.imgUrl}
+              src={destinationData[data].images.png}
               alt='destination'
               height={500}
               width={500}
@@ -80,8 +66,8 @@ function updateDisplay(id) {
                   name={destination}
                   onClick={updateDisplay}
                   id={index}
-                  style={index === pos ? {color: 'white'}: {color: '#D0D6F9'}}
-                  className={index === pos ? 'active destLinks' : 'non-active destLinks'}
+                  style={index === data ? {color: 'white'}: {color: '#D0D6F9'}}
+                  className={index === data ? 'active destLinks' : 'non-active destLinks'}
                 />
               )
             })}
@@ -96,8 +82,8 @@ function updateDisplay(id) {
           }}
           >
             <MainText 
-              title={data.dataTitle}
-              content={data.dataContent}
+              title={destinationData[data].name}
+              content={destinationData[data].description}
             />
           </motion.div>
           <motion.div 
@@ -109,8 +95,8 @@ function updateDisplay(id) {
           }}
           className='p-4 w-full dsk:w-mid dsk:self-start dsk:px-0 xdsk:w-3/4'>
             <Stats 
-              distance={data.destDistance}
-              travelTime={data.travelTime}
+              distance={destinationData[data].distance}
+              travelTime={destinationData[data].travel}
             />
           </motion.div>
         </div>
