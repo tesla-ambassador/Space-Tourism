@@ -34,7 +34,14 @@ function updateDisplay(id) {
   return (
     <div className='destBg h-fit overflow-scroll flex items-center justify-center dsk:overflow-hidden xdsk:h-screen xdsk:overflow-hidden'>
       <div className='mt-24 text-center px-5 flex flex-col items-center gap-3 py-5 tab:py-12 tab:w-full tab:px-10 dsk:flex-row dsk:items-start xdsk:mt-32'>
-        <div className='flex flex-col items-center gap-5 w-full dsk:mt-5 dsk:gap-10'>
+        <motion.div 
+        initial={{opacity: 0, x: '-100vw'}}
+        animate={{opacity: 1, x: '0vw'}}
+        transition={{
+            duration: 1,
+            delay: .5
+        }}
+        className='flex flex-col items-center gap-5 w-full dsk:mt-5 dsk:gap-10'>
           <PageTitle 
             number='01'
             aboutPage='PICK YOUR DESTINATION'
@@ -56,9 +63,16 @@ function updateDisplay(id) {
               width={500}
             />
           </motion.div>
-        </div>
+        </motion.div>
         <div className='flex flex-col items-center w-full xdsk:mt-10 dsk:text-justify xdsk:px-20'>
-          <div className='flex gap-3 p-3 tab:mt-5 dsk:self-start dsk:px-0'>
+          <motion.div 
+          initial={{opacity: 0, x: '100vw'}}
+          animate={{opacity: 1, x: '0vw'}}
+          transition={{
+              duration: 1,
+              delay: 1
+          }}
+          className='flex gap-3 p-3 tab:mt-5 dsk:self-start dsk:px-0'>
             {destArray.map((destination, index) => {
               return (
                 <Tabs 
@@ -71,14 +85,14 @@ function updateDisplay(id) {
                 />
               )
             })}
-          </div>
+          </motion.div>
           <motion.div 
           className='py-4 dsk:w-full border-b-navDark border-b-2'
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
+          initial={{opacity: 0, x: '100vw'}}
+          animate={{opacity: 1, x: '0'}}
           transition={{
             delay: .5,
-            duration: .5
+            duration: 1
           }}
           >
             <MainText 
@@ -86,12 +100,19 @@ function updateDisplay(id) {
               content={data.dataContent}
             />
           </motion.div>
-          <div className='p-4 w-full dsk:w-mid dsk:self-start dsk:px-0 xdsk:w-3/4'>
+          <motion.div 
+          initial={{opacity: 0, y: '100vh'}}
+          animate={{opacity: 1, y: '0vh'}}
+          transition={{
+              duration: 1,
+              delay: 1.2
+          }}
+          className='p-4 w-full dsk:w-mid dsk:self-start dsk:px-0 xdsk:w-3/4'>
             <Stats 
               distance={data.destDistance}
               travelTime={data.travelTime}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

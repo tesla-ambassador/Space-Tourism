@@ -1,7 +1,11 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export default function Dots(props) {
   return (
-    <div className={props.className} onClick={() => {props.onClick(props.id)}}></div>
+    <motion.div 
+    whileHover={{scale: '1.2'}}
+    className={props.className} onClick={() => {props.onClick(props.id)}}>
+    </motion.div>
   )
 }
